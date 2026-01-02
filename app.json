@@ -1,4 +1,7 @@
 {
   "name": "StealthCalcVault",
-  "displayName": "StealthCalcVault"
+  "displayName": "StealthCalcVault",
+  "android": {
+    "package": "com.anonymous.stealthcalcvault"
+  }
 }
