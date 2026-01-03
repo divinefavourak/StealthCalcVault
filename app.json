@@ -1,7 +1,19 @@
 {
-  "name": "StealthCalcVault",
-  "displayName": "StealthCalcVault",
-  "android": {
-    "package": "com.anonymous.stealthcalcvault"
+  "expo": {
+    "name": "StealthCalcVault",
+    "slug": "stealthcalcvault",
+    "version": "0.0.1",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "android": {
+      "package": "com.anonymous.stealthcalcvault"
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    }
   }
 }

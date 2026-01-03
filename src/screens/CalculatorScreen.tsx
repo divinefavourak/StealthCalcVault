@@ -41,7 +41,7 @@ export default function CalculatorScreen({ navigation }: any) {
         if (wrongAttempts >= 2) {
           Alert.alert('Error', 'Calculator crashed.', [{ text: 'OK', onPress: () => BackHandler.exitApp() }]);
         } else {
-          setResult('Error');
+          setResult('Error : Restart Calculator');
         }
       }
       setExpression('');
