@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { View, Text, Button, FlatList, Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AppContext } from '../context/AppContext';
 import * as DocumentPicker from 'expo-document-picker';
 import EncryptionService from '../services/EncryptionService';
