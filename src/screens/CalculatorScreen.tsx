@@ -71,15 +71,32 @@ export default function CalculatorScreen({ navigation }: any) {
     }
   };
 
+  const rows = [
+    ['AC', '(', ')', '/'],
+    ['sin', '7', '8', '9'],
+    ['*', 'cos', '4', '5'],
+    ['6', '-', 'tan', '1'],
+    ['2', '3', '+', 'log'],
+    ['0', '.', '=', 'sqrt'],
+  ];
+
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: '#000' }}>
       <TapGestureHandler onHandlerStateChange={onDoubleTap} numberOfTaps={2}>
         <LongPressGestureHandler onHandlerStateChange={onLongPress} minDurationMs={800}>
           <View style={{ flex: 1 }}>
-            <Display expression={expression} result={result} />
-            <View style={{ flexDirection: 'row', flexWrap: 'wrap', padding: 10 }}>
-              {['AC', '(', ')', '/', 'sin', '7', '8', '9', '*', 'cos', '4', '5', '6', '-', 'tan', '1', '2', '3', '+', 'log', '0', '.', '=', 'sqrt'].map(v => (
-                <CalcButton key={v} value={v} onPress={handlePress} />
+            <Display
+              expression={isAuthMode ? '*'.repeat(expression.length) : expression}
+              result={result}
+              isAuthMode={isAuthMode}
+            />
+            <View style={{ flex: 1, padding: 10, justifyContent: 'space-evenly' }}>
+              {rows.map((row, i) => (
+                <View key={i} style={{ flexDirection: 'row', flex: 1, marginBottom: 8 }}>
+                  {row.map((v) => (
+                    <CalcButton key={v} value={v} onPress={handlePress} />
+                  ))}
+                </View>
               ))}
             </View>
             {showOverlay && <OverlayCalc />}

@@ -1,8 +1,31 @@
 {
-  "extends": "@react-native/typescript-config",
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "types": ["jest"],
+    "target": "esnext",
+    "module": "NodeNext",
+    "jsx": "react-native",
+    "lib": [
+      "esnext"
+    ],
+    "moduleResolution": "NodeNext",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noEmit": true,
+    "types": [
+      "jest",
+      "react-native",
+      "expo"
+    ]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/Pods"
+  ]
 }

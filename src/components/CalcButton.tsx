@@ -26,10 +26,10 @@ export default function CalcButton({ value, onPress }: Props) {
 }
 
 const styles = StyleSheet.create({
-  button: { flex: 1, aspectRatio: 1, justifyContent: 'center', alignItems: 'center', margin: 4, backgroundColor: '#333', borderRadius: 12 },
+  button: { flex: 1, justifyContent: 'center', alignItems: 'center', margin: 4, backgroundColor: '#333', borderRadius: 12 },
   operator: { backgroundColor: '#ff9500' },
   function: { backgroundColor: '#666' },
   clear: { backgroundColor: '#f00' },
-  text: { fontSize: 28, color: '#fff' },
+  text: { fontSize: 24, color: '#fff' },
   operatorText: { color: '#fff' },
 });

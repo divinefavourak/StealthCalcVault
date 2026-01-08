@@ -3,18 +3,34 @@
     "name": "StealthCalcVault",
     "slug": "stealthcalcvault",
     "version": "0.0.1",
-    "sdkVersion": "54.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "orientation": "portrait",
+    "icon": "./assets/icon.webp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/icon.webp",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
     "android": {
-      "package": "com.anonymous.stealthcalcvault"
+      "package": "com.anonymous.stealthcalcvault",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.webp",
+        "backgroundColor": "#000000"
+      }
     },
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.webp"
+    },
+    "jsEngine": "jsc",
+    "extra": {
+      "eas": {
+        "projectId": "235ff161-e7dd-414d-8bc1-12dd66ea70ac"
+      }
     }
   }
 }
