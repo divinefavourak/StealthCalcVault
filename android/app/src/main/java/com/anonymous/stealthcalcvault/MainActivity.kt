@@ -1,4 +1,4 @@
-package com.stealthcalcvault
+package com.anonymous.stealthcalcvault
 
 import android.os.Build
 import android.os.Bundle
