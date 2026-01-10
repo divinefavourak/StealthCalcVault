@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { AppContext } from '../context/AppContext';
 
 interface Props {
   expression: string;
@@ -8,22 +9,48 @@ interface Props {
 }
 
 export default function Display({ expression, result, isAuthMode }: Props) {
+  const { colors } = useContext(AppContext);
+
   return (
-    <View style={[styles.container, isAuthMode && styles.authContainer]}>
-      <Text style={[styles.expression, isAuthMode && styles.authText]}>
-        {expression || (isAuthMode ? 'Enter PIN' : '0')}
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <Text
+        style={[
+          styles.expression,
+          { color: isAuthMode ? '#4dff4d' : colors.displaySubtext },
+        ]}
+        adjustsFontSizeToFit
+        numberOfLines={1}
+      >
+        {expression || (isAuthMode ? 'Enter PIN' : '')}
       </Text>
-      <Text style={[styles.result, isAuthMode && styles.authText]}>
-        {result || (isAuthMode ? 'Vault Locked' : '0')}
+      <Text
+        style={[
+          styles.result,
+          { color: isAuthMode ? '#4dff4d' : colors.text },
+        ]}
+        adjustsFontSizeToFit
+        numberOfLines={1}
+      >
+        {result || (isAuthMode ? 'Locked' : '0')}
       </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20, alignItems: 'flex-end', backgroundColor: '#000', minHeight: 120, justifyContent: 'flex-end' },
-  authContainer: { backgroundColor: '#1a1a1a', borderBottomColor: '#0f0', borderBottomWidth: 2 },
-  expression: { fontSize: 32, color: '#fff', opacity: 0.8 },
-  result: { fontSize: 48, color: '#fff', fontWeight: 'bold' },
-  authText: { color: '#4dff4d' },
+  container: {
+    padding: 30,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    minHeight: 180,
+  },
+  expression: {
+    fontSize: 28,
+    marginBottom: 10,
+    fontWeight: '300',
+  },
+  result: {
+    fontSize: 64,
+    fontWeight: '400',
+  },
 });
